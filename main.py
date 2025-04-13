@@ -21,7 +21,7 @@ app.add_middleware(
 )
 
 # Répertoire de stockage
-UPLOAD_DIR = "../data/uploads"
+UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Détection automatique des colonnes
@@ -101,7 +101,7 @@ def predict_capacity(file_name: str, cycle_column: str, capacity_column: str, mo
     except Exception as e:
         return {"error": str(e)}
 
-PLOT_DIR = "../data/plots"
+PLOT_DIR = "plots"
 os.makedirs(PLOT_DIR, exist_ok=True)
 
 @app.get("/plot")
@@ -142,4 +142,3 @@ def generate_plot(file_name: str, cycle_column: str, capacity_column: str, model
 
     except Exception as e:
         return {"error": str(e)}
-
